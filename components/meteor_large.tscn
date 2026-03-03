@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://tdtpovc1vn35"]
+
+[ext_resource type="Script" uid="uid://coh4o26ebvggr" path="res://components/meteor.gd" id="1_3p5m2"]
+[ext_resource type="Texture2D" uid="uid://b8c2ujdn84kpn" path="res://assets/tex/meteor_large.png" id="1_o3ha3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3p5m2"]
+radius = 21.0
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=174028950 groups=["meteor"]]
+script = ExtResource("1_3p5m2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=807313350]
+texture = ExtResource("1_o3ha3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1622329298]
+shape = SubResource("CircleShape2D_3p5m2")

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cf6uccwvc4u3a"]
+
+[ext_resource type="Texture2D" uid="uid://tin8f4mjc780" path="res://assets/tex/ship_F.png" id="1_dh6rd"]
+
+[node name="ObjectiveIndicator" type="Node2D" unique_id=1819099627]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1412479446]
+position = Vector2(40, 0)
+rotation = 1.5707964
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_dh6rd")

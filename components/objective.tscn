@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://7aogf4kwibk8"]
+
+[ext_resource type="Script" uid="uid://coh4o26ebvggr" path="res://components/meteor.gd" id="1_e13sh"]
+[ext_resource type="Texture2D" uid="uid://cxt6rp4nmn0io" path="res://assets/tex/station_C.png" id="1_us07a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_us07a"]
+radius = 36.013885
+
+[node name="Objective" type="StaticBody2D" unique_id=1323950899 groups=["objective"]]
+script = ExtResource("1_e13sh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=734437322]
+texture = ExtResource("1_us07a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=441725330]
+shape = SubResource("CircleShape2D_us07a")
