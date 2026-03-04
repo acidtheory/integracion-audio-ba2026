@@ -1,0 +1,258 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3161908922",
+    "Type": "User",
+    "GUID": "{682CD930-3557-4EB0-9F1A-119E0DD1A0AA}",
+    "Language": "SFX",
+    "Hash": "{B79435E2-C5DA-0EE8-AFF7-B84C345CAFC6}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
+    "ShortName": "Main",
+    "Path": "Main.bnk",
+    "Media": [
+     {
+      "Id": "79505406",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mx_IntroFull_108BPM4-4_L_22M_2PeM.wav",
+      "CachePath": "59/{5908182C-EE6E-8BCE-9EB3-864771CF6E9F}.wem"
+     },
+     {
+      "Id": "215236117",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mx_GpSpace_Base_99BPM4-4_L_16M_2PeM.wav",
+      "CachePath": "15/{15E3F7FF-C893-B90A-FA92-F50E36C8AB02}.wem"
+     },
+     {
+      "Id": "240291582",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mx_GpSpace_Synth2_99BPM4-4_L_16M_2PeM.wav",
+      "CachePath": "5B/{5B325D19-5C99-F3AC-A260-9ED222C6DEA3}.wem"
+     },
+     {
+      "Id": "397408227",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_Radar_Loop.wav",
+      "CachePath": "8A/{8A9D6C7C-89EF-4DC5-C600-04D01C62FA4B}.wem"
+     },
+     {
+      "Id": "504370927",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mx_GpSpace_Synth1_99BPM4-4_L_16M_2PeM.wav",
+      "CachePath": "2A/{2A60CA6D-E432-C43E-E502-25624999CDC3}.wem"
+     },
+     {
+      "Id": "567528945",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_Radar_Fin.wav",
+      "CachePath": "37/{37C3A176-69A8-2FC6-81E1-409D4FCF9556}.wem"
+     },
+     {
+      "Id": "620178972",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_Radar_Inicio.wav",
+      "CachePath": "2C/{2C38B892-BBFF-F102-62AD-D88919A5EDD9}.wem"
+     },
+     {
+      "Id": "825958226",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_Boton-001.wav",
+      "CachePath": "FF/{FF5214C7-664F-60F2-C893-34DB24A94F11}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3349137146",
+      "Name": "Play_Mx_Sw",
+      "ObjectPath": "\\Events\\Default Work Unit\\Mx\\Play_Mx_Sw",
+      "GUID": "{C52357F6-59D3-4A78-98CE-9032FED4361B}",
+      "Color": "4",
+      "DurationType": "Infinite",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2367315283",
+         "Id": "89505537",
+         "GUID": "{85D5A843-BA44-476B-9B2E-9B520E0849D0}",
+         "Color": "4"
+        },
+        "MediaRefs": [
+         {
+          "Id": "215236117"
+         },
+         {
+          "Id": "240291582"
+         },
+         {
+          "Id": "504370927"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2367315283",
+         "Id": "748895195",
+         "GUID": "{6B38E4CA-A88E-4193-8539-C94DB0407C42}",
+         "Color": "4"
+        },
+        "MediaRefs": [
+         {
+          "Id": "215236117"
+         },
+         {
+          "Id": "240291582"
+         },
+         {
+          "Id": "504370927"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2367315283",
+         "Id": "221232726",
+         "GUID": "{383209A8-B5B4-4D36-A0C7-9AEEC34060B1}",
+         "Color": "4"
+        },
+        "MediaRefs": [
+         {
+          "Id": "79505406"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "2235920626",
+      "Name": "Play_Sfx_Boton_001",
+      "ObjectPath": "\\Events\\Default Work Unit\\Sfx\\Play_Sfx_Boton_001",
+      "GUID": "{8EE903DA-621C-4323-A2EC-C66F2FF53747}",
+      "Color": "10",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3623356",
+      "DurationMax": "1.3623356",
+      "MediaRefs": [
+       {
+        "Id": "825958226"
+       }
+      ]
+     },
+     {
+      "Id": "3501558446",
+      "Name": "Play_Sfx_Radar",
+      "ObjectPath": "\\Events\\Default Work Unit\\Sfx\\Play_Sfx_Radar",
+      "GUID": "{5ADC875F-BC64-4191-92B7-EFFCA96F37CA}",
+      "Color": "10",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "397408227"
+       },
+       {
+        "Id": "620178972"
+       }
+      ]
+     },
+     {
+      "Id": "2874623752",
+      "Name": "Play_Sfx_Radar_Fin",
+      "ObjectPath": "\\Events\\Default Work Unit\\Sfx\\Play_Sfx_Radar_Fin",
+      "GUID": "{09379872-F662-4197-A1B4-DC84C6BEEEA3}",
+      "Color": "10",
+      "DurationType": "OneShot",
+      "DurationMin": "0.45538247",
+      "DurationMax": "0.45538247",
+      "MediaRefs": [
+       {
+        "Id": "567528945"
+       }
+      ]
+     },
+     {
+      "Id": "1505221168",
+      "Name": "Stop_Mx_Sw",
+      "ObjectPath": "\\Events\\Default Work Unit\\Mx\\Stop_Mx_Sw",
+      "GUID": "{1EA840BA-2133-4C66-8643-EE5480F52942}",
+      "Color": "4",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "1388700061",
+      "Name": "Sfx_Radar_Vol",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Sfx_Radar_Vol",
+      "GUID": "{CF0196F6-F745-4636-AAF2-DAD1BA3883A0}",
+      "Color": "10"
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "2367315283",
+      "Name": "Mx_Musica",
+      "ObjectPath": "\\States\\Default Work Unit\\Mx_Musica",
+      "GUID": "{EB3B0D0C-E8FB-4214-AB3D-C7A993E57F7F}",
+      "Color": "4",
+      "States": [
+       {
+        "Id": "89505537",
+        "Name": "GamePlay",
+        "ObjectPath": "\\States\\Default Work Unit\\Mx_Musica\\GamePlay",
+        "GUID": "{85D5A843-BA44-476B-9B2E-9B520E0849D0}",
+        "Color": "4"
+       },
+       {
+        "Id": "221232726",
+        "Name": "Lose",
+        "ObjectPath": "\\States\\Default Work Unit\\Mx_Musica\\Lose",
+        "GUID": "{383209A8-B5B4-4D36-A0C7-9AEEC34060B1}",
+        "Color": "4"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Mx_Musica\\None",
+        "GUID": "{6B38E4CA-A88E-4193-8539-C94DB0407C42}",
+        "Color": "4"
+       },
+       {
+        "Id": "979765101",
+        "Name": "Win",
+        "ObjectPath": "\\States\\Default Work Unit\\Mx_Musica\\Win",
+        "GUID": "{6D6D6B83-E72A-4C36-87D5-63D2B1E20610}",
+        "Color": "4"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{A0877A95-9112-3320-0EF3-F18AB3E386DE}"
+ }
+}
