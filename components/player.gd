@@ -50,6 +50,8 @@ func _physics_process(delta: float) -> void:
 	speed = move_toward(speed,expected_speed, delta * 0.75 * abs(speed-expected_speed))
 	velocity = Vector2(0,-1).rotated(rotation) * speed
 	move_and_slide()
+	#agregué esto xq no me llegaba el player speed al AudioM.
+	audio_manager.player_speed = speed
 	
 	# medidor de combustible
 	fuel -= delta

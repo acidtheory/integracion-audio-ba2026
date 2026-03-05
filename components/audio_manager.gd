@@ -6,7 +6,7 @@ var distance_from_objective : float
 var radar_distance_threshold : float = 150
 var radar_playing : bool = false
 
-#var player_speed : float
+var player_speed : float
 
 
 #----------------------------------------------------------------------
@@ -15,14 +15,12 @@ func _ready() -> void:
 	Wwise.load_bank("Main")
 	Wwise.add_default_listener(self)
 	Wwise.set_state("pausa", "pausa_off")
-	start_level_music()
-	#Wwise.post_event("Play_Sfx_Nave", self)
+	start_level_sound()
 	
-	#esto stopea xq lo disparo con evento... 
 	
-	#Wwise.set_state("Player_Life", "PL_03")
+	
 
-func start_level_music():
+func start_level_sound():
 	if music_playing:
 		Wwise.set_state("Mx_Musica", "GamePlay")
 		
@@ -30,8 +28,8 @@ func start_level_music():
 		Wwise.set_state("Mx_Musica", "GamePlay")
 		Wwise.post_event("Play_Mx_Sw", self)
 		music_playing = true
-#		Wwise.set_rtpc_value("Vol_Mx", 100, self)
-#		Wwise.set_rtpc_value("Vol_Sfx", 50, self)
+	
+	Wwise.post_event("Play_Sfx_Nave", self)
 		
 		
 
@@ -39,8 +37,10 @@ func start_level_music():
 func _process(_delta: float) -> void:
 	check_radar_distance()
 	update_radar_rtpc()
-	#update_nave_rtpc(player_speed)
-
+	update_nave_rtpc()
+	print(player_speed)
+	
+	
 func check_radar_distance():
 	if distance_from_objective <= radar_distance_threshold and not radar_playing:
 		Wwise.post_event("Play_Sfx_Radar", self)
@@ -53,8 +53,8 @@ func update_radar_rtpc():
 	var rtpc_value = inverted * 100.0
 	Wwise.set_rtpc_value("Sfx_Radar_Vol", rtpc_value, self)
 
-#func update_nave_rtpc(player_speed: float):
-#	Wwise.set_rtpc_value("Sfx_Engine_Speed", player_speed, self)
+func update_nave_rtpc():
+	Wwise.set_rtpc_value("Sfx_Nave", player_speed, self)
 
 #func stop_music():
 #	Wwise.stop_all()
