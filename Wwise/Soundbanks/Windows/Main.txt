@@ -1,6 +1,7 @@
 Event	ID	Name			Wwise Object Path	Notes
 	1505221168	Stop_Mx_Sw			\Default Work Unit\Mx\Stop_Mx_Sw	
 	2235920626	Play_Sfx_Boton_001			\Default Work Unit\Sfx\Play_Sfx_Boton_001	
+	2820221086	Play_Sfx_Nave			\Default Work Unit\Sfx\Play_Sfx_Nave	
 	2874623752	Play_Sfx_Radar_Fin			\Default Work Unit\Sfx\Play_Sfx_Radar_Fin	
 	3349137146	Play_Mx_Sw			\Default Work Unit\Mx\Play_Mx_Sw	
 	3501558446	Play_Sfx_Radar			\Default Work Unit\Sfx\Play_Sfx_Radar	
@@ -15,7 +16,16 @@ State	ID	Name	State Group			Notes
 	979765101	Win	Mx_Musica			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
+	742989333	Sfx_Nave			\Default Work Unit\Sfx_Nave	
 	1388700061	Sfx_Radar_Vol			\Default Work Unit\Sfx_Radar_Vol	
+
+Effect plug-ins	ID	Name	Type				Notes
+	796249169	Wwise Parametric EQ (Custom)	Wwise Parametric EQ			
+	1976939195	Deep	Wwise Flanger			
+	3354577677	Fast_LF_Tremolo	Wwise Tremolo			
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	977681632	BASS 01	Wwise Synth One		\Containers\Factory Synth One\Instruments\Sfx_Nave\BASS 01	Audiokinetic Inc. All rights reserved. Content provided by Vincent Gagnon © 2014 Vincent Gagnon
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	79505406	Mx_IntroFull_108BPM4-4_L_22M_2PeM	.cache\59\{5908182C-EE6E-8BCE-9EB3-864771CF6E9F}.wem		\Containers\Default Work Unit\Mx_Sw\Mx_Lose_108BPM_PL\Mx_IntroFull_108BPM4-4_L_22M_2PeM\Mx_IntroFull_108BPM4-4_L_22M_2PeM		9408096
@@ -23,7 +33,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	240291582	Mx_GpSpace_Synth2_99BPM4-4_L_16M_2PeM	.cache\5B\{5B325D19-5C99-F3AC-A260-9ED222C6DEA3}.wem		\Containers\Default Work Unit\Mx_Sw\Mx_Gameplay_99BPM_PL\Mx_GpSpace_99BPM_16M_2PeM_01_Loop\Mx_GpSpace_Synth2_99BPM4-4_L_16M_2PeM		8552824
 	397408227	Sfx_Radar_Loop	.cache\8A\{8A9D6C7C-89EF-4DC5-C600-04D01C62FA4B}.wem		\Containers\Sfx_Work_Unit\Sfx_Radar_Seq\Sfx_Radar_Loop		897760
 	504370927	Mx_GpSpace_Synth1_99BPM4-4_L_16M_2PeM	.cache\2A\{2A60CA6D-E432-C43E-E502-25624999CDC3}.wem		\Containers\Default Work Unit\Mx_Sw\Mx_Gameplay_99BPM_PL\Mx_GpSpace_99BPM_16M_2PeM_Intro\Mx_GpSpace_Synth1_99BPM4-4_L_16M_2PeM		8552824
-	567528945	Sfx_Radar_Fin	.cache\37\{37C3A176-69A8-2FC6-81E1-409D4FCF9556}.wem		\Containers\Sfx_Work_Unit\Sfx_Radar_Fin		80424
+	567528945	Sfx_Radar_Fin	.cache\B1\{B1518CB9-A50D-E0D9-6FBD-E057CD85095A}.wem		\Containers\Sfx_Work_Unit\Sfx_Radar_Fin		80424
 	620178972	Sfx_Radar_Inicio	.cache\2C\{2C38B892-BBFF-F102-62AD-D88919A5EDD9}.wem		\Containers\Sfx_Work_Unit\Sfx_Radar_Seq\Sfx_Radar_Inicio		434016
 	825958226	Sfx_Boton-001	.cache\FF\{FF5214C7-664F-60F2-C893-34DB24A94F11}.wem		\Containers\Sfx_Work_Unit\Sfx_Boton-001		240412
 

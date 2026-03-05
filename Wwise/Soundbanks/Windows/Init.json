@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{DEF3A85A-25B3-B7B0-8314-3E3C050E9933}",
+    "Hash": "{02246390-5630-8A8B-D387-B0DCD5DF902F}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -43,6 +43,12 @@
      }
     ],
     "GameParameters": [
+     {
+      "Id": "742989333",
+      "Name": "Sfx_Nave",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Sfx_Nave",
+      "GUID": "{F4281B39-D45F-4ADB-B849-C1DB3916E0DE}"
+     },
      {
       "Id": "822163944",
       "Name": "SS_Air_RPM",
@@ -659,6 +665,6 @@
     ]
    }
   ],
-  "FileHash": "{B867D05A-1320-E239-6F9A-2C5FDD470E67}"
+  "FileHash": "{F483BCD5-C922-7283-7022-6F1626FEFB6E}"
  }
 }

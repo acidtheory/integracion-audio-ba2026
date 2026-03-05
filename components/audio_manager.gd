@@ -6,6 +6,8 @@ var distance_from_objective : float
 var radar_distance_threshold : float = 150
 var radar_playing : bool = false
 
+#var player_speed : float
+
 
 #----------------------------------------------------------------------
 func _ready() -> void:
@@ -14,6 +16,7 @@ func _ready() -> void:
 	Wwise.add_default_listener(self)
 	Wwise.set_state("pausa", "pausa_off")
 	start_level_music()
+	#Wwise.post_event("Play_Sfx_Nave", self)
 	
 	#esto stopea xq lo disparo con evento... 
 	
@@ -36,6 +39,7 @@ func start_level_music():
 func _process(_delta: float) -> void:
 	check_radar_distance()
 	update_radar_rtpc()
+	#update_nave_rtpc(player_speed)
 
 func check_radar_distance():
 	if distance_from_objective <= radar_distance_threshold and not radar_playing:
@@ -47,8 +51,11 @@ func update_radar_rtpc():
 	var normalized = clamp(distance_from_objective / max_distance, 0.0, 1.0)
 	var inverted = 1.0 - normalized
 	var rtpc_value = inverted * 100.0
-	
 	Wwise.set_rtpc_value("Sfx_Radar_Vol", rtpc_value, self)
+
+#func update_nave_rtpc(player_speed: float):
+#	Wwise.set_rtpc_value("Sfx_Engine_Speed", player_speed, self)
+
 #func stop_music():
 #	Wwise.stop_all()
 #	music_playing = false
@@ -61,7 +68,7 @@ func update_radar_rtpc():
 # cualquier cosa mandame un mensaje!
 
 # velocidad actual del jugador
-var player_speed : float
+#var player_speed : float
 
 # distancia y direccion al meteorito mas cerca del jugador
 var distance_from_meteor : float # distancia en metros hacia el meteoro mas cercano

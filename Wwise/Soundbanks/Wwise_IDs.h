@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID PLAY_MX_SW = 3349137146U;
         static const AkUniqueID PLAY_SFX_BOTON_001 = 2235920626U;
+        static const AkUniqueID PLAY_SFX_NAVE = 2820221086U;
         static const AkUniqueID PLAY_SFX_RADAR = 3501558446U;
         static const AkUniqueID PLAY_SFX_RADAR_FIN = 2874623752U;
         static const AkUniqueID STOP_MX_SW = 1505221168U;
@@ -51,6 +52,7 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID SFX_NAVE = 742989333U;
         static const AkUniqueID SFX_RADAR_VOL = 1388700061U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
         static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;

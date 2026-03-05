@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{682CD930-3557-4EB0-9F1A-119E0DD1A0AA}",
     "Language": "SFX",
-    "Hash": "{2767370D-AC74-A63A-0ACB-BDEE5752615A}",
+    "Hash": "{B89DC00E-18CE-B3F4-D773-0520FDE9678D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -61,7 +61,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Sfx_Radar_Fin.wav",
-      "CachePath": "37/{37C3A176-69A8-2FC6-81E1-409D4FCF9556}.wem"
+      "CachePath": "B1/{B1518CB9-A50D-E0D9-6FBD-E057CD85095A}.wem"
      },
      {
       "Id": "620178972",
@@ -80,6 +80,45 @@
       "CachePath": "FF/{FF5214C7-664F-60F2-C893-34DB24A94F11}.wem"
      }
     ],
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "796249169",
+       "Name": "Wwise Parametric EQ (Custom)",
+       "ObjectPath": "\\Containers\\Factory Synth One\\Instruments\\Sfx_Nave\\[Effect Slot [0]: (Parametric EQ)]\\Wwise Parametric EQ (Custom)",
+       "GUID": "{51E07BBA-21F5-4AAA-944C-DC9BBAE94ADE}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "977681632",
+       "Name": "BASS 01",
+       "ObjectPath": "\\Containers\\Factory Synth One\\Instruments\\Sfx_Nave\\BASS 01",
+       "GUID": "{4C0AB644-DE5B-4032-AEFD-F6CEFB70A2FE}",
+       "Color": "10",
+       "LibName": "Wwise Synth One",
+       "LibId": "9699330"
+      }
+     ],
+     "ShareSets": [
+      {
+       "Id": "1976939195",
+       "Name": "Deep",
+       "ObjectPath": "\\Effects\\Factory Effects\\Flanger\\Flanging\\Deep",
+       "GUID": "{76753DA8-3DCF-4812-A726-2745812F6C1B}",
+       "LibName": "Wwise Flanger",
+       "LibId": "8192003"
+      },
+      {
+       "Id": "3354577677",
+       "Name": "Fast_LF_Tremolo",
+       "ObjectPath": "\\Effects\\Factory Effects\\Tremolo\\Fast_LF_Tremolo",
+       "GUID": "{3B09A271-D9D4-4A4E-B545-F681E8313E5F}",
+       "LibName": "Wwise Tremolo",
+       "LibId": "8585219"
+      }
+     ]
+    },
     "Events": [
      {
       "Id": "3349137146",
@@ -161,6 +200,32 @@
       ]
      },
      {
+      "Id": "2820221086",
+      "Name": "Play_Sfx_Nave",
+      "ObjectPath": "\\Events\\Default Work Unit\\Sfx\\Play_Sfx_Nave",
+      "GUID": "{DC74F781-F4C1-4055-A415-E7D252CF6767}",
+      "Color": "10",
+      "DurationType": "Unknown",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "796249169"
+        },
+        {
+         "Id": "977681632"
+        }
+       ],
+       "ShareSets": [
+        {
+         "Id": "1976939195"
+        },
+        {
+         "Id": "3354577677"
+        }
+       ]
+      }
+     },
+     {
       "Id": "3501558446",
       "Name": "Play_Sfx_Radar",
       "ObjectPath": "\\Events\\Default Work Unit\\Sfx\\Play_Sfx_Radar",
@@ -204,6 +269,12 @@
      }
     ],
     "GameParameters": [
+     {
+      "Id": "742989333",
+      "Name": "Sfx_Nave",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Sfx_Nave",
+      "GUID": "{F4281B39-D45F-4ADB-B849-C1DB3916E0DE}"
+     },
      {
       "Id": "1388700061",
       "Name": "Sfx_Radar_Vol",
@@ -253,6 +324,6 @@
     ]
    }
   ],
-  "FileHash": "{02315111-F119-19F8-8342-3332B6E314AA}"
+  "FileHash": "{D9725274-283E-790F-A2B6-ABD637CFCF39}"
  }
 }
