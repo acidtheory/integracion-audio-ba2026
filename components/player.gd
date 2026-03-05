@@ -62,6 +62,7 @@ func _physics_process(delta: float) -> void:
 		died = true
 	#QUEDA nafta?
 	audio_manager.lanafta = fuel
+	
 	# indicador de objetivos
 	for indicator : Node2D in indicators.get_children():
 		var index = indicator.get_index()
