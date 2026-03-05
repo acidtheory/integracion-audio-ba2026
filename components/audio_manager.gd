@@ -3,7 +3,7 @@ class_name AudioManager
 
 var music_playing := false
 var distance_from_objective : float 
-var radar_distance_threshold : float = 100
+var radar_distance_threshold : float = 150
 var radar_playing : bool = false
 
 
