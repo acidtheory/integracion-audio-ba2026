@@ -38,7 +38,7 @@ func _process(_delta: float) -> void:
 	check_radar_distance()
 	update_radar_rtpc()
 	update_nave_rtpc()
-	print(player_speed)
+	#print(player_speed)
 	
 	
 func check_radar_distance():
@@ -96,7 +96,7 @@ func objective_reached():
 	print("Objective reached")
 
 func meteor_hit():
-	Wwise.post_event("Play_Sfx_Boton_001", self)
+	Wwise.post_event("Play_Sfx_Hit", self)
 	print("Meteor hit")
 
 func died():

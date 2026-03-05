@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{682CD930-3557-4EB0-9F1A-119E0DD1A0AA}",
     "Language": "SFX",
-    "Hash": "{45994921-495A-5502-BB87-3BABE2F184E3}",
+    "Hash": "{2735498F-B065-0F32-3E9E-7B99E2682C6B}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -38,6 +38,14 @@
       "Location": "Memory",
       "ShortName": "Mx_GpSpace_Synth2_99BPM4-4_L_16M_2PeM.wav",
       "CachePath": "5B/{5B325D19-5C99-F3AC-A260-9ED222C6DEA3}.wem"
+     },
+     {
+      "Id": "331302800",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mx_GpSpace_Full_Sting.wav",
+      "CachePath": "AD/{ADB18FAD-0D91-91FF-090A-C9D21F250705}.wem"
      },
      {
       "Id": "397408227",
@@ -78,6 +86,22 @@
       "Location": "Memory",
       "ShortName": "Sfx_Boton-001.wav",
       "CachePath": "FF/{FF5214C7-664F-60F2-C893-34DB24A94F11}.wem"
+     },
+     {
+      "Id": "954456257",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mx_WinSpace_Full_102BPM4-4_L_8M.wav",
+      "CachePath": "84/{844119E3-A59E-F33F-E902-EAB49586050E}.wem"
+     },
+     {
+      "Id": "1030573829",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_CrashLayer.wav",
+      "CachePath": "86/{861C7B8F-0B6D-2F16-8A9C-F923C477BDEC}.wem"
      }
     ],
     "Plugins": {
@@ -95,6 +119,15 @@
        "Name": "BASS 01",
        "ObjectPath": "\\Containers\\Factory Synth One\\Instruments\\Sfx_Nave\\BASS 01",
        "GUID": "{4C0AB644-DE5B-4032-AEFD-F6CEFB70A2FE}",
+       "Color": "10",
+       "LibName": "Wwise Synth One",
+       "LibId": "9699330"
+      },
+      {
+       "Id": "986046449",
+       "Name": "DENIED 02",
+       "ObjectPath": "\\Containers\\Factory Synth One\\UI Sounds\\DENIED 02\\DENIED 02",
+       "GUID": "{C7BCB0AF-3C26-4DD8-9CDB-FC447F5D3A7E}",
        "Color": "10",
        "LibName": "Wwise Synth One",
        "LibId": "9699330"
@@ -127,6 +160,11 @@
       "GUID": "{C52357F6-59D3-4A78-98CE-9032FED4361B}",
       "Color": "4",
       "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "331302800"
+       }
+      ],
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -181,23 +219,45 @@
           "Id": "79505406"
          }
         ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2367315283",
+         "Id": "979765101",
+         "GUID": "{6D6D6B83-E72A-4C36-87D5-63D2B1E20610}",
+         "Color": "4"
+        },
+        "MediaRefs": [
+         {
+          "Id": "954456257"
+         }
+        ]
        }
       ]
      },
      {
-      "Id": "2235920626",
-      "Name": "Play_Sfx_Boton_001",
-      "ObjectPath": "\\Events\\Default Work Unit\\Sfx\\Play_Sfx_Boton_001",
+      "Id": "1376640657",
+      "Name": "Play_Sfx_Hit",
+      "ObjectPath": "\\Events\\Default Work Unit\\Sfx\\Play_Sfx_Hit",
       "GUID": "{8EE903DA-621C-4323-A2EC-C66F2FF53747}",
       "Color": "10",
-      "DurationType": "OneShot",
-      "DurationMin": "1.3623356",
-      "DurationMax": "1.3623356",
+      "DurationType": "Unknown",
       "MediaRefs": [
        {
         "Id": "825958226"
+       },
+       {
+        "Id": "1030573829"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "986046449"
+        }
+       ]
+      }
      },
      {
       "Id": "2820221086",
@@ -324,6 +384,6 @@
     ]
    }
   ],
-  "FileHash": "{3BE045E5-F766-7B5E-5982-B4161C3A6DBB}"
+  "FileHash": "{09058DCB-1E56-B45D-0AB1-A5A3F078A84A}"
  }
 }

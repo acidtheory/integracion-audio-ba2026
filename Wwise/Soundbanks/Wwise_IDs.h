@@ -14,7 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID PLAY_MX_SW = 3349137146U;
-        static const AkUniqueID PLAY_SFX_BOTON_001 = 2235920626U;
+        static const AkUniqueID PLAY_SFX_HIT = 1376640657U;
         static const AkUniqueID PLAY_SFX_NAVE = 2820221086U;
         static const AkUniqueID PLAY_SFX_RADAR = 3501558446U;
         static const AkUniqueID PLAY_SFX_RADAR_FIN = 2874623752U;
