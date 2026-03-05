@@ -18,6 +18,7 @@ namespace AK
         static const AkUniqueID PLAY_SFX_NAVE = 2820221086U;
         static const AkUniqueID PLAY_SFX_RADAR = 3501558446U;
         static const AkUniqueID PLAY_SFX_RADAR_FIN = 2874623752U;
+        static const AkUniqueID PLAY_WHA = 2972765248U;
         static const AkUniqueID STOP_MX_SW = 1505221168U;
     } // namespace EVENTS
 
@@ -36,6 +37,16 @@ namespace AK
             } // namespace STATE
         } // namespace MX_MUSICA
 
+        namespace MX_VIDAS
+        {
+            static const AkUniqueID GROUP = 3497261126U;
+
+            namespace STATE
+            {
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace MX_VIDAS
+
         namespace PAUSA
         {
             static const AkUniqueID GROUP = 3092587489U;
@@ -52,6 +63,7 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID MX_VIDAS = 3497261126U;
         static const AkUniqueID SFX_NAVE = 742989333U;
         static const AkUniqueID SFX_RADAR_VOL = 1388700061U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;

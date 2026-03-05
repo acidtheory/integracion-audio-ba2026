@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{682CD930-3557-4EB0-9F1A-119E0DD1A0AA}",
     "Language": "SFX",
-    "Hash": "{2735498F-B065-0F32-3E9E-7B99E2682C6B}",
+    "Hash": "{9F74D183-27C1-FFA4-4250-B5C9A7D704AE}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -106,6 +106,23 @@
     ],
     "Plugins": {
      "Custom": [
+      {
+       "Id": "539993087",
+       "Name": "Wwise Parametric EQ (Custom)",
+       "ObjectPath": "\\Containers\\Factory Synth One\\SFX\\Sfx_LowFuel\\[Effect Slot [0]: (Parametric EQ)]\\Wwise Parametric EQ (Custom)",
+       "GUID": "{31200AF4-FFD3-4687-9B01-9F9CB0D8A7B5}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "750600072",
+       "Name": "WHA",
+       "ObjectPath": "\\Containers\\Factory Synth One\\SFX\\Sfx_LowFuel\\WHA",
+       "GUID": "{1A9F7C06-7D98-4664-993D-C9A8811FE519}",
+       "Color": "10",
+       "LibName": "Wwise Synth One",
+       "LibId": "9699330"
+      },
       {
        "Id": "796249169",
        "Name": "Wwise Parametric EQ (Custom)",
@@ -269,6 +286,12 @@
       "PluginRefs": {
        "Custom": [
         {
+         "Id": "539993087"
+        },
+        {
+         "Id": "750600072"
+        },
+        {
          "Id": "796249169"
         },
         {
@@ -317,6 +340,23 @@
       ]
      },
      {
+      "Id": "2972765248",
+      "Name": "Play_WHA",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_WHA",
+      "GUID": "{7FA85A3C-6244-4E49-B77A-70496AC65D89}",
+      "DurationType": "Unknown",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "539993087"
+        },
+        {
+         "Id": "750600072"
+        }
+       ]
+      }
+     },
+     {
       "Id": "1505221168",
       "Name": "Stop_Mx_Sw",
       "ObjectPath": "\\Events\\Default Work Unit\\Mx\\Stop_Mx_Sw",
@@ -341,6 +381,12 @@
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Sfx_Radar_Vol",
       "GUID": "{CF0196F6-F745-4636-AAF2-DAD1BA3883A0}",
       "Color": "10"
+     },
+     {
+      "Id": "3497261126",
+      "Name": "Mx_Vidas",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Mx_Vidas",
+      "GUID": "{54CA72F1-39D7-4F7B-995C-FB7BD1209AB9}"
      }
     ],
     "StateGroups": [
@@ -384,6 +430,6 @@
     ]
    }
   ],
-  "FileHash": "{09058DCB-1E56-B45D-0AB1-A5A3F078A84A}"
+  "FileHash": "{86F83DD1-2AA0-21BD-507B-607B48C9EB12}"
  }
 }

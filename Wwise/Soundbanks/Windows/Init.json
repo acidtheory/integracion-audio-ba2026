@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{02246390-5630-8A8B-D387-B0DCD5DF902F}",
+    "Hash": "{90DA4032-16A5-C3FC-D681-008AB416FC70}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -99,6 +99,12 @@
       "GUID": "{536FA72C-8C7E-4C8B-AE03-EF34FDADC314}"
      },
      {
+      "Id": "3497261126",
+      "Name": "Mx_Vidas",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Mx_Vidas",
+      "GUID": "{54CA72F1-39D7-4F7B-995C-FB7BD1209AB9}"
+     },
+     {
       "Id": "3715662592",
       "Name": "SS_Air_Storm",
       "ObjectPath": "\\Game Parameters\\Factory Soundseed Air Game Syncs\\SS_Air_Storm",
@@ -182,6 +188,20 @@
         "ObjectPath": "\\States\\Default Work Unit\\pausa\\pausa_off",
         "GUID": "{445C9467-0634-4AA1-ACD5-E9186F16A1ED}",
         "Color": "8"
+       }
+      ]
+     },
+     {
+      "Id": "3497261126",
+      "Name": "Mx_Vidas",
+      "ObjectPath": "\\States\\Default Work Unit\\Mx_Vidas",
+      "GUID": "{9DA22E48-F924-462A-8A59-78DD383260D1}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Mx_Vidas\\None",
+        "GUID": "{D41F4E63-B597-4154-AFD7-43B7E5178225}"
        }
       ]
      }
@@ -665,6 +685,6 @@
     ]
    }
   ],
-  "FileHash": "{F483BCD5-C922-7283-7022-6F1626FEFB6E}"
+  "FileHash": "{D27D460A-5A8E-53EB-8F48-ABE0C7B6B909}"
  }
 }

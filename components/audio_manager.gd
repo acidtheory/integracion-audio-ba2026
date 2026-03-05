@@ -2,13 +2,14 @@ extends Node
 class_name AudioManager
 
 var music_playing := false
+
 var distance_from_objective : float 
 var radar_distance_threshold : float = 150
 var radar_playing : bool = false
 
 var player_speed : float
 
-
+var lanafta : float
 #----------------------------------------------------------------------
 func _ready() -> void:
 	Wwise.register_game_obj(self, "AudioManager")
@@ -38,7 +39,9 @@ func _process(_delta: float) -> void:
 	check_radar_distance()
 	update_radar_rtpc()
 	update_nave_rtpc()
+	update_nafta()
 	#print(player_speed)
+	
 	
 	
 func check_radar_distance():
@@ -55,6 +58,10 @@ func update_radar_rtpc():
 
 func update_nave_rtpc():
 	Wwise.set_rtpc_value("Sfx_Nave", player_speed, self)
+	
+func update_nafta():
+	Wwise.set_rtpc_value("Mx_Vidas", lanafta, self)
+	pass
 
 #func stop_music():
 #	Wwise.stop_all()
@@ -102,6 +109,7 @@ func meteor_hit():
 func died():
 	Wwise.set_state("Mx_Musica", "Lose")
 	Wwise.post_event("Play_Sfx_Radar_Fin", self)
+	Wwise.set_rtpc_value("Mx_Vidas", 255, self)
 	print("Died")
 
 func win():
@@ -112,11 +120,13 @@ func win():
 func paused():
 	Wwise.set_state("pausa", "pausa_on")
 	Wwise.post_event("Play_Sfx_Radar_Fin", self)
+	Wwise.set_rtpc_value("Sfx_Nave", 0, self)
 	print("Paused")
 
 func unpaused():
 	Wwise.set_state("pausa", "pausa_off")
 	Wwise.post_event("Play_Sfx_Radar", self)
+	
 	print("Unpaused")
 # me imagine que te pareceria mas comodo pausar y despausar como eventos, pero
 # si lo queres como un booleano, lo podes agarrar con

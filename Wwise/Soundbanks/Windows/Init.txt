@@ -1,6 +1,7 @@
 State Group	ID	Name			Wwise Object Path	Notes
 	2367315283	Mx_Musica			\Default Work Unit\Mx_Musica	
 	3092587489	pausa			\Default Work Unit\pausa	
+	3497261126	Mx_Vidas			\Default Work Unit\Mx_Vidas	
 
 State	ID	Name	State Group			Notes
 	89505537	GamePlay	Mx_Musica			
@@ -10,6 +11,7 @@ State	ID	Name	State Group			Notes
 	549173535	pausa_on	pausa			
 	748895195	None	pausa			
 	2659475283	pausa_off	pausa			
+	748895195	None	Mx_Vidas			
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	2246998526	Main Audio Bus			\Default Work Unit\Main Audio Bus	
