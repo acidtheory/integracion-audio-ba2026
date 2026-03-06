@@ -151,6 +151,7 @@ label_settings = SubResource("LabelSettings_axel1")
 script = ExtResource("3_md670")
 
 [node name="Debug" type="CanvasLayer" parent="." unique_id=231589670]
+visible = false
 
 [node name="DebugLabel" type="Label" parent="Debug" unique_id=75725235]
 offset_right = 367.0

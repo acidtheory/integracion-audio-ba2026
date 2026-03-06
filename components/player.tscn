@@ -3,8 +3,37 @@
 [ext_resource type="Texture2D" uid="uid://cvc67ym13fg7c" path="res://assets/tex/ship_I.png" id="1_0g4kb"]
 [ext_resource type="Script" uid="uid://fxr3i8setrt7" path="res://components/player.gd" id="1_5odhx"]
 [ext_resource type="Shader" uid="uid://bt5upe20pgvl4" path="res://assets/sha/meter.gdshader" id="2_51jd6"]
-[ext_resource type="Texture2D" uid="uid://c0mxskk7a4akc" path="res://assets/tex/effect_yellow.png" id="2_uapwn"]
 [ext_resource type="Script" uid="uid://blogewsok2c30" path="res://components/player_camera.gd" id="5_1kub6"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1kub6"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_5odhx"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1kub6"]
+gradient = SubResource("Gradient_5odhx")
+fill = 1
+fill_from = Vector2(0.5, 0.6)
+fill_to = Vector2(0.8, 0.3)
+
+[sub_resource type="Curve" id="Curve_1kub6"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.10215053, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_kuobi"]
+curve = SubResource("Curve_1kub6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5odhx"]
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 30.0
+initial_velocity_max = 103.009995
+gravity = Vector3(0, 0, 0)
+scale_min = 0.099999994
+scale_max = 0.5
+alpha_curve = SubResource("CurveTexture_kuobi")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uapwn"]
 shader = ExtResource("2_51jd6")
@@ -38,7 +67,7 @@ func _physics_process(delta: float) -> void:
 				body.queue_free()
 				player.audio_manager.objective_reached()
 			if body.is_in_group(\"meteor\"):
-				player.fuel -= 7.5
+				player.fuel -= 22.5
 				monitoring = false
 				ship.modulate = Color(1,1,1,0.5)
 				invincible_timer.start()
@@ -55,17 +84,66 @@ radius = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_kuobi"]
 radius = 5.0
 
+[sub_resource type="Gradient" id="Gradient_1kub6"]
+interpolation_mode = 2
+colors = PackedColorArray(0, 1, 1, 1, 0, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kuobi"]
+gradient = SubResource("Gradient_1kub6")
+fill = 1
+fill_from = Vector2(0.5, 0.6)
+fill_to = Vector2(0.8, 0.3)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0lm1f"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_max = 103.009995
+gravity = Vector3(0, 0, 0)
+scale_min = 0.099999994
+scale_max = 1.5
+alpha_curve = SubResource("CurveTexture_kuobi")
+
+[sub_resource type="Gradient" id="Gradient_kuobi"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0lm1f"]
+gradient = SubResource("Gradient_kuobi")
+fill = 1
+fill_from = Vector2(0.5, 0.6)
+fill_to = Vector2(0.8, 0.3)
+
+[sub_resource type="GDScript" id="GDScript_5odhx"]
+resource_name = "Victoria"
+script/source = "extends CanvasLayer
+
+func win():
+	create_tween().tween_property($VBoxContainer,\"modulate\",Color.WHITE,2.5)
+
+func _process(delta):
+	$VBoxContainer/TimeLabel.text = String.num($\"..\".elapsed_time,2)
+	
+	if $VBoxContainer.modulate == Color.WHITE and Input.is_action_just_pressed(\"ui_accept\"):
+		get_tree().reload_current_scene()
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_5odhx"]
+font_size = 32
+
 [node name="Player" type="CharacterBody2D" unique_id=307531632]
 script = ExtResource("1_5odhx")
 
 [node name="Ship" type="Sprite2D" parent="." unique_id=1678906505]
 texture = ExtResource("1_0g4kb")
 
-[node name="Trail" type="Sprite2D" parent="Ship" unique_id=2120129224]
-visible = false
-z_index = -1
-position = Vector2(0, 48)
-texture = ExtResource("2_uapwn")
+[node name="ExhaustParticle" type="GPUParticles2D" parent="Ship" unique_id=1093866866]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_1kub6")
+position = Vector2(0, 18)
+amount = 32
+texture = SubResource("GradientTexture2D_1kub6")
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_5odhx")
 
 [node name="Meters" type="CenterContainer" parent="." unique_id=1387030196]
 anchors_preset = 8
@@ -111,5 +189,51 @@ wait_time = 2.5
 one_shot = true
 
 [node name="Indicators" type="Node2D" parent="." unique_id=583875833]
+
+[node name="Explode" type="GPUParticles2D" parent="." unique_id=496844882]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_1kub6")
+emitting = false
+amount = 64
+texture = SubResource("GradientTexture2D_kuobi")
+one_shot = true
+explosiveness = 0.69
+process_material = SubResource("ParticleProcessMaterial_0lm1f")
+
+[node name="ExplodeBad" type="GPUParticles2D" parent="." unique_id=1101515735]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_1kub6")
+emitting = false
+amount = 64
+texture = SubResource("GradientTexture2D_0lm1f")
+one_shot = true
+explosiveness = 0.69
+process_material = SubResource("ParticleProcessMaterial_0lm1f")
+
+[node name="Victoria" type="CanvasLayer" parent="." unique_id=431365947]
+process_mode = 3
+script = SubResource("GDScript_5odhx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Victoria" unique_id=58627636]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Victoria/VBoxContainer" unique_id=983499378]
+layout_mode = 2
+text = "Felicidades! Encontraste los satelites en:"
+label_settings = SubResource("LabelSettings_5odhx")
+
+[node name="TimeLabel" type="Label" parent="Victoria/VBoxContainer" unique_id=1225391992]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "5.3"
+label_settings = SubResource("LabelSettings_5odhx")
 
 [connection signal="timeout" from="Hitbox/InvincibleTimer" to="Hitbox" method="_on_invincible_timer_timeout"]

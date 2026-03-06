@@ -6,7 +6,7 @@ extends Node
 const METEOR_LARGE = preload("uid://tdtpovc1vn35")
 const METEOR_SMALL = preload("uid://bq23rs5apnv81")
 
-const OBJECTIVES_AMOUNT = 3
+const OBJECTIVES_AMOUNT = 1
 const OBJECTIVE = preload("uid://7aogf4kwibk8")
 @onready var objectives: Node2D = $Objectives
 
@@ -104,5 +104,9 @@ func _process(delta: float) -> void:
 		player.audio_manager.player_is_braking = false
 	if objectives.get_children().is_empty() and not won:
 		won = true
+		player.get_node("Victoria").win()
 		player.audio_manager.win()
+		player.process_mode = Node.PROCESS_MODE_DISABLED
+		create_tween().tween_property(player.get_node("Ship"),"modulate",Color.TRANSPARENT,0.1)
+		player.get_node("Explode").emitting = true
 	player.audio_manager.objectives_left = objectives.get_child_count()

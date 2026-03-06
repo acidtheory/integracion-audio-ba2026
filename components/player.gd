@@ -9,7 +9,7 @@ var expected_speed : float = 0
 var speed : float = 0
 var real_rotation : float = 0
 
-const MAX_FUEL = 256
+const MAX_FUEL = 2#128
 var fuel = MAX_FUEL
 
 @onready var indicators: Node2D = $Indicators
@@ -17,6 +17,8 @@ var fuel = MAX_FUEL
 const OBJECTIVE_INDICATOR = preload("uid://cf6uccwvc4u3a")
 
 @export var audio_manager : AudioManager
+
+@onready var exhaust_particle = $Ship/ExhaustParticle
 
 var died : bool = false
 
@@ -26,7 +28,11 @@ func _ready() -> void:
 		var new_indicator = OBJECTIVE_INDICATOR.instantiate()
 		indicators.add_child(new_indicator)
 
+
+var elapsed_time = 0
 func _physics_process(delta: float) -> void:
+	elapsed_time += delta
+	exhaust_particle.amount_ratio = remap(speed,0,MAX_SPEED,0,1)
 	
 	# rotacion de la nave
 	if Input.is_action_pressed("ui_left"):
@@ -58,8 +64,12 @@ func _physics_process(delta: float) -> void:
 	$Meters/FuelMeter.material.set_shader_parameter("progress",remap(fuel,0,MAX_FUEL,0,1))
 	if fuel <= 0 and not died:
 		audio_manager.died()
-		visible = false
 		died = true
+		$Victoria.create_tween().tween_property($Ship,"modulate",Color.TRANSPARENT,0.5)
+		$ExplodeBad.emitting = true
+		process_mode = Node.PROCESS_MODE_DISABLED
+		await get_tree().create_timer(5).timeout
+		get_tree().reload_current_scene()
 	#QUEDA nafta?
 	audio_manager.lanafta = fuel
 	
