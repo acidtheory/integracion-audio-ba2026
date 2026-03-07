@@ -22,14 +22,10 @@ func _ready() -> void:
 	
 
 func start_level_sound():
-	if music_playing:
-		Wwise.set_state("Mx_Musica", "GamePlay")
-		
-	else: 
-		Wwise.set_state("Mx_Musica", "GamePlay")
-		Wwise.post_event("Play_Mx_Sw", self)
-		music_playing = true
-	
+
+	Wwise.post_event("Stop_Mx_Sw", self)
+	Wwise.set_state("Mx_Musica", "GamePlay")
+	Wwise.post_event("Play_Mx_Sw", self)
 	Wwise.post_event("Play_Sfx_Nave", self)
 		
 		
