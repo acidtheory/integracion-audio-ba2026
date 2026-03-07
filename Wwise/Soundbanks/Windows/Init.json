@@ -102,7 +102,8 @@
       "Id": "3497261126",
       "Name": "Mx_Vidas",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Mx_Vidas",
-      "GUID": "{54CA72F1-39D7-4F7B-995C-FB7BD1209AB9}"
+      "GUID": "{54CA72F1-39D7-4F7B-995C-FB7BD1209AB9}",
+      "Color": "4"
      },
      {
       "Id": "3715662592",
@@ -685,6 +686,6 @@
     ]
    }
   ],
-  "FileHash": "{D27D460A-5A8E-53EB-8F48-ABE0C7B6B909}"
+  "FileHash": "{7CC16B77-239C-E2C6-7949-7FE070BAA78D}"
  }
 }

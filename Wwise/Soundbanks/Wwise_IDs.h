@@ -20,6 +20,7 @@ namespace AK
         static const AkUniqueID PLAY_SFX_RADAR_FIN = 2874623752U;
         static const AkUniqueID PLAY_WHA = 2972765248U;
         static const AkUniqueID STOP_MX_SW = 1505221168U;
+        static const AkUniqueID STOP_SFX_NAVE = 3618684200U;
     } // namespace EVENTS
 
     namespace STATES

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{682CD930-3557-4EB0-9F1A-119E0DD1A0AA}",
     "Language": "SFX",
-    "Hash": "{9F74D183-27C1-FFA4-4250-B5C9A7D704AE}",
+    "Hash": "{904A4DAD-2063-9771-CBC3-9260588D4C0E}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -342,8 +342,9 @@
      {
       "Id": "2972765248",
       "Name": "Play_WHA",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_WHA",
+      "ObjectPath": "\\Events\\Default Work Unit\\Sfx\\Play_WHA",
       "GUID": "{7FA85A3C-6244-4E49-B77A-70496AC65D89}",
+      "Color": "10",
       "DurationType": "Unknown",
       "PluginRefs": {
        "Custom": [
@@ -362,6 +363,17 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Mx\\Stop_Mx_Sw",
       "GUID": "{1EA840BA-2133-4C66-8643-EE5480F52942}",
       "Color": "4",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3618684200",
+      "Name": "Stop_Sfx_Nave",
+      "ObjectPath": "\\Events\\Default Work Unit\\Sfx\\Stop_Sfx_Nave",
+      "GUID": "{B122F46B-3F9F-4DC2-A82A-F938D38F4CE0}",
+      "Color": "10",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
@@ -386,7 +398,8 @@
       "Id": "3497261126",
       "Name": "Mx_Vidas",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Mx_Vidas",
-      "GUID": "{54CA72F1-39D7-4F7B-995C-FB7BD1209AB9}"
+      "GUID": "{54CA72F1-39D7-4F7B-995C-FB7BD1209AB9}",
+      "Color": "4"
      }
     ],
     "StateGroups": [
@@ -430,6 +443,6 @@
     ]
    }
   ],
-  "FileHash": "{86F83DD1-2AA0-21BD-507B-607B48C9EB12}"
+  "FileHash": "{E07F39E5-CD31-11EE-3C02-B14F1D174282}"
  }
 }

@@ -65,10 +65,12 @@ func _physics_process(delta: float) -> void:
 	if fuel <= 0 and not died:
 		audio_manager.died()
 		died = true
+		
 		$Victoria.create_tween().tween_property($Ship,"modulate",Color.TRANSPARENT,0.5)
 		$ExplodeBad.emitting = true
 		process_mode = Node.PROCESS_MODE_DISABLED
-		await get_tree().create_timer(5).timeout
+		#acaaaa-----------5 a 12
+		await get_tree().create_timer(12).timeout
 		get_tree().reload_current_scene()
 	#QUEDA nafta?
 	audio_manager.lanafta = fuel

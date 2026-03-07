@@ -4,7 +4,7 @@ class_name AudioManager
 var music_playing := false
 
 var distance_from_objective : float 
-var radar_distance_threshold : float = 150
+var radar_distance_threshold : float = 500
 var radar_playing : bool = false
 
 var player_speed : float
@@ -109,12 +109,13 @@ func meteor_hit():
 func died():
 	Wwise.set_state("Mx_Musica", "Lose")
 	Wwise.post_event("Play_Sfx_Radar_Fin", self)
-	Wwise.set_rtpc_value("Mx_Vidas", 255, self)
+	Wwise.post_event("Stop_Sfx_Nave", self)
 	print("Died")
 
 func win():
 	Wwise.set_state("Mx_Musica", "Win")
 	Wwise.post_event("Play_Sfx_Radar_Fin", self)
+	Wwise.post_event("Stop_Sfx_Nave", self)
 	print("Win")
 
 func paused():

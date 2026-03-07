@@ -109,6 +109,7 @@ func win():
 	create_tween().tween_property($VBoxContainer,\"modulate\",Color.WHITE,2.5)
 
 func _process(delta):
+	#acaaaaaa------------------------------------------------------ 1.5
 	$VBoxContainer/TimeLabel.text = String.num($\"..\".elapsed_time,2)
 	
 	if $VBoxContainer.modulate == Color.WHITE and Input.is_action_just_pressed(\"ui_accept\"):

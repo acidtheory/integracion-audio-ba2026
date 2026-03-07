@@ -3,9 +3,10 @@ Event	ID	Name			Wwise Object Path	Notes
 	1505221168	Stop_Mx_Sw			\Default Work Unit\Mx\Stop_Mx_Sw	
 	2820221086	Play_Sfx_Nave			\Default Work Unit\Sfx\Play_Sfx_Nave	
 	2874623752	Play_Sfx_Radar_Fin			\Default Work Unit\Sfx\Play_Sfx_Radar_Fin	
-	2972765248	Play_WHA			\Default Work Unit\Play_WHA	
+	2972765248	Play_WHA			\Default Work Unit\Sfx\Play_WHA	
 	3349137146	Play_Mx_Sw			\Default Work Unit\Mx\Play_Mx_Sw	
 	3501558446	Play_Sfx_Radar			\Default Work Unit\Sfx\Play_Sfx_Radar	
+	3618684200	Stop_Sfx_Nave			\Default Work Unit\Sfx\Stop_Sfx_Nave	
 
 State Group	ID	Name			Wwise Object Path	Notes
 	2367315283	Mx_Musica			\Default Work Unit\Mx_Musica	
