@@ -6,14 +6,14 @@ extends Node
 const METEOR_LARGE = preload("uid://tdtpovc1vn35")
 const METEOR_SMALL = preload("uid://bq23rs5apnv81")
 
-const OBJECTIVES_AMOUNT = 1
+const OBJECTIVES_AMOUNT = 3
 const OBJECTIVE = preload("uid://7aogf4kwibk8")
 @onready var objectives: Node2D = $Objectives
 
 @onready var max_meteor_distance : float = max(get_viewport().size.x, get_viewport().size.y) * 1.5
 @onready var min_meteor_spawn_distance : float = max(get_viewport().size.x, get_viewport().size.y)
 
-@export var max_meteor_amount : float = 64
+@export var max_meteor_amount : float = 256
 
 var won : bool = false
 

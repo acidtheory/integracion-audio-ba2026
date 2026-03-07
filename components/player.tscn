@@ -42,12 +42,6 @@ shader_parameter/outer = 0.5
 shader_parameter/color = Color(1, 0, 0, 1)
 shader_parameter/progress = 1.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_uapwn"]
-radius = 11.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_5odhx"]
-radius = 4.0
-
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1kub6"]
 frequency = 0.05
 
@@ -77,12 +71,6 @@ func _on_invincible_timer_timeout() -> void:
 	monitoring = true
 	ship.modulate = Color.WHITE
 "
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_1kub6"]
-radius = 12.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_kuobi"]
-radius = 5.0
 
 [sub_resource type="Gradient" id="Gradient_1kub6"]
 interpolation_mode = 2
@@ -159,14 +147,6 @@ material = SubResource("ShaderMaterial_uapwn")
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1134026292]
-position = Vector2(0, 10)
-shape = SubResource("CircleShape2D_uapwn")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=826071007]
-position = Vector2(0, -5)
-shape = SubResource("CircleShape2D_5odhx")
-
 [node name="Cam" type="Camera2D" parent="." unique_id=2129764918]
 script = ExtResource("5_1kub6")
 noise = SubResource("FastNoiseLite_1kub6")
@@ -174,19 +154,13 @@ noise = SubResource("FastNoiseLite_1kub6")
 [node name="Hitbox" type="Area2D" parent="." unique_id=2110793930]
 script = SubResource("GDScript_1kub6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=616611910]
-position = Vector2(0, 10)
-shape = SubResource("CircleShape2D_1kub6")
-debug_color = Color(0.9671944, 0, 0.4788034, 0.41960785)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox" unique_id=543165920]
-position = Vector2(0, -7)
-shape = SubResource("CircleShape2D_kuobi")
-debug_color = Color(0.95027083, 2.4065375e-06, 0.5718226, 0.41960785)
-
 [node name="InvincibleTimer" type="Timer" parent="Hitbox" unique_id=857121320]
 wait_time = 2.5
 one_shot = true
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hitbox" unique_id=351315031]
+scale = Vector2(0.98, 0.98)
+polygon = PackedVector2Array(0, -23, 16, 16, 0, 24, -16, 16)
 
 [node name="Indicators" type="Node2D" parent="." unique_id=583875833]
 
@@ -235,5 +209,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "5.3"
 label_settings = SubResource("LabelSettings_5odhx")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=1144515407]
+scale = Vector2(0.69, 0.69)
+polygon = PackedVector2Array(0, -23, 16, 16, 0, 24, -16, 16)
 
 [connection signal="timeout" from="Hitbox/InvincibleTimer" to="Hitbox" method="_on_invincible_timer_timeout"]

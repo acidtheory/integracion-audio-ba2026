@@ -19,6 +19,10 @@ config/icon="uid://dvv8p4jqvl7ef"
 
 WwiseRuntimeManager="*uid://d1tnl3pruka8t"
 
+[display]
+
+window/size/mode=3
+
 [global_group]
 
 meteor=""

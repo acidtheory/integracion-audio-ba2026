@@ -9,7 +9,7 @@ var expected_speed : float = 0
 var speed : float = 0
 var real_rotation : float = 0
 
-const MAX_FUEL = 2#128
+const MAX_FUEL = 200
 var fuel = MAX_FUEL
 
 @onready var indicators: Node2D = $Indicators
