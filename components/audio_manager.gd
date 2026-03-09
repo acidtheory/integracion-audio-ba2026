@@ -6,6 +6,7 @@ var music_playing := false
 var distance_from_objective : float 
 var radar_distance_threshold : float = 500
 var radar_playing : bool = false
+static var bank_loaded := false
 
 var player_speed : float
 
@@ -13,7 +14,10 @@ var lanafta : float
 #----------------------------------------------------------------------
 func _ready() -> void:
 	Wwise.register_game_obj(self, "AudioManager")
-	Wwise.load_bank("Main")
+	if not bank_loaded:
+		Wwise.load_bank("Main")
+		bank_loaded = true
+	Wwise.post_event("Stop_Mx_Sw", self)
 	Wwise.add_default_listener(self)
 	Wwise.set_state("pausa", "pausa_off")
 	start_level_sound()
@@ -23,7 +27,7 @@ func _ready() -> void:
 
 func start_level_sound():
 
-	Wwise.post_event("Stop_Mx_Sw", self)
+	#Wwise.post_event("Stop_Mx_Sw", self)
 	Wwise.set_state("Mx_Musica", "GamePlay")
 	Wwise.post_event("Play_Mx_Sw", self)
 	Wwise.post_event("Play_Sfx_Nave", self)
