@@ -16,7 +16,8 @@ var fuel = MAX_FUEL
 @export var objectives : Node2D
 const OBJECTIVE_INDICATOR = preload("uid://cf6uccwvc4u3a")
 
-@export var audio_manager : AudioManager
+#@export var audio_manager : AudioManager
+@onready var audio_manager = get_node("/root/AudioManager")
 
 @onready var exhaust_particle = $Ship/ExhaustParticle
 

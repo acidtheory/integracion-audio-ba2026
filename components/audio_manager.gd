@@ -1,29 +1,26 @@
 extends Node
-class_name AudioManager
 
 var music_playing := false
-
 var distance_from_objective : float 
 var radar_distance_threshold : float = 500
 var radar_playing : bool = false
-static var bank_loaded := false
-
+var bank_loaded := false  # Ya no necesita ser static
 var player_speed : float
-
 var lanafta : float
-#----------------------------------------------------------------------
+
 func _ready() -> void:
-	Wwise.register_game_obj(self, "AudioManager")
 	if not bank_loaded:
+		Wwise.register_game_obj(self, "AudioManager")
 		Wwise.load_bank("Main")
+		Wwise.add_default_listener(self)
 		bank_loaded = true
-	Wwise.post_event("Stop_Mx_Sw", self)
-	Wwise.add_default_listener(self)
+	
 	Wwise.set_state("pausa", "pausa_off")
+	radar_playing = false
+	Wwise.post_event("Stop_Mx_Sw", self)
+	Wwise.post_event("Stop_Sfx_Nave", self)
+	Wwise.post_event("Play_Sfx_Radar_Fin", self)
 	start_level_sound()
-	
-	
-	
 
 func start_level_sound():
 
@@ -34,6 +31,12 @@ func start_level_sound():
 		
 		
 
+func reset():
+	radar_playing = false
+	Wwise.post_event("Stop_Mx_Sw", self)
+	Wwise.post_event("Stop_Sfx_Nave", self)
+	Wwise.post_event("Play_Sfx_Radar_Fin", self)
+	start_level_sound()
 
 func _process(_delta: float) -> void:
 	check_radar_distance()

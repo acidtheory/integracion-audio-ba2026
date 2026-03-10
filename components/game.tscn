@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://qu6vydv7dvov" path="res://components/game.gd" id="1_axel1"]
 [ext_resource type="PackedScene" uid="uid://c26k6mwmexlwe" path="res://components/player.tscn" id="1_eb21c"]
-[ext_resource type="Script" uid="uid://b0gqauph3qmkm" path="res://components/audio_manager.gd" id="3_md670"]
 
 [sub_resource type="Shader" id="Shader_uapwn"]
 code = "shader_type canvas_item;
@@ -80,8 +79,8 @@ shader_parameter/bigStarAmount = 0.002
 resource_name = "PauseMenu"
 script/source = "extends CanvasLayer
 
-@onready var audio_manager: AudioManager = $\"../AudioManager\"
-
+#@onready var audio_manager: AudioManager = $\"../AudioManager\"
+@onready var audio_manager = get_node(\"/root/AudioManager\")
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed(\"ui_cancel\"):
@@ -111,9 +110,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Player" parent="." unique_id=307531632 node_paths=PackedStringArray("objectives", "audio_manager") instance=ExtResource("1_eb21c")]
+[node name="Player" parent="." unique_id=307531632 node_paths=PackedStringArray("objectives") instance=ExtResource("1_eb21c")]
 objectives = NodePath("../Objectives")
-audio_manager = NodePath("../AudioManager")
 
 [node name="Meteors" type="Node2D" parent="." unique_id=769776739]
 
@@ -146,9 +144,6 @@ layout_mode = 2
 layout_mode = 2
 text = "PAUSA"
 label_settings = SubResource("LabelSettings_axel1")
-
-[node name="AudioManager" type="Node" parent="." unique_id=403056581]
-script = ExtResource("3_md670")
 
 [node name="Debug" type="CanvasLayer" parent="." unique_id=231589670]
 visible = false

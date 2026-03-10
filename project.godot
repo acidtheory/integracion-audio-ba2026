@@ -18,6 +18,7 @@ config/icon="uid://dvv8p4jqvl7ef"
 [autoload]
 
 WwiseRuntimeManager="*uid://d1tnl3pruka8t"
+AudioManager="*uid://b0gqauph3qmkm"
 
 [display]
 
