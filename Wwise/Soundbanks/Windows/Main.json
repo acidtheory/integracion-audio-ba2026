@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{682CD930-3557-4EB0-9F1A-119E0DD1A0AA}",
     "Language": "SFX",
-    "Hash": "{D62B17B5-9CC4-0633-DFAB-D0F2878F00C6}",
+    "Hash": "{955B8062-6276-2CF1-640A-9A8D69C272E8}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -151,6 +151,14 @@
       }
      ],
      "ShareSets": [
+      {
+       "Id": "642532550",
+       "Name": "New_Pitch_Shifter",
+       "ObjectPath": "\\Effects\\Default Work Unit\\New_Pitch_Shifter",
+       "GUID": "{D1C2281E-E140-4A54-9ED8-BF86EF3EE06D}",
+       "LibName": "Wwise Pitch Shifter",
+       "LibId": "8912899"
+      },
       {
        "Id": "1976939195",
        "Name": "Deep",
@@ -322,7 +330,14 @@
        {
         "Id": "620178972"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "642532550"
+        }
+       ]
+      }
      },
      {
       "Id": "2874623752",
@@ -443,6 +458,6 @@
     ]
    }
   ],
-  "FileHash": "{C46B9F86-0EF1-9B80-969E-2AC59B602DB2}"
+  "FileHash": "{D2703CA4-688A-F09B-12B2-97CB2E3304AF}"
  }
 }

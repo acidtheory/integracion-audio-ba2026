@@ -34,6 +34,7 @@ Modulator Envelope	ID	Name			Wwise Object Path	Notes
 
 Effect plug-ins	ID	Name	Type				Notes
 	539993087	Wwise Parametric EQ (Custom)	Wwise Parametric EQ			
+	642532550	New_Pitch_Shifter	Wwise Pitch Shifter			
 	796249169	Wwise Parametric EQ (Custom)	Wwise Parametric EQ			
 	1976939195	Deep	Wwise Flanger			
 	3354577677	Fast_LF_Tremolo	Wwise Tremolo			

@@ -23,8 +23,7 @@ func _ready() -> void:
 	start_level_sound()
 
 func start_level_sound():
-
-	#Wwise.post_event("Stop_Mx_Sw", self)
+	
 	Wwise.set_state("Mx_Musica", "GamePlay")
 	Wwise.post_event("Play_Mx_Sw", self)
 	Wwise.post_event("Play_Sfx_Nave", self)
@@ -43,7 +42,7 @@ func _process(_delta: float) -> void:
 	update_radar_rtpc()
 	update_nave_rtpc()
 	update_nafta()
-	#print(player_speed)
+	
 	
 	
 	
@@ -66,9 +65,6 @@ func update_nafta():
 	Wwise.set_rtpc_value("Mx_Vidas", lanafta, self)
 	pass
 
-#func stop_music():
-#	Wwise.stop_all()
-#	music_playing = false
 
 #----------------------------------------------------------------------
 
@@ -132,6 +128,3 @@ func unpaused():
 	Wwise.post_event("Play_Sfx_Radar", self)
 	
 	print("Unpaused")
-# me imagine que te pareceria mas comodo pausar y despausar como eventos, pero
-# si lo queres como un booleano, lo podes agarrar con
-# get_tree().paused
