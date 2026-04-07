@@ -96,7 +96,7 @@ func _physics_process(_delta: float) -> void:
 	
 	$Debug/DebugLabel.text = "Distancia a meteoro mas cercano: " + str(audio_manager.distance_from_meteor) + "\n" + "Distancia a objetivo mas cercano: " + str(audio_manager.distance_from_objective) + "\n" + "Objetivos restantes: " + str(audio_manager.objectives_left)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_pressed("ui_up"):
 		audio_manager.player_is_accelerating = true
 	else:

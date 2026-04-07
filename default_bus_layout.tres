@@ -1,13 +1,33 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://bi7wbmi8oj7df"]
 
-[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_j3pel"]
-resource_name = "LowPassFilter"
-
 [sub_resource type="AudioEffectHighPassFilter" id="AudioEffectHighPassFilter_j3pel"]
 resource_name = "HighPassFilter"
+resonance = 1.0
+db = 3
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_j3pel"]
+resource_name = "LowPassFilter"
+resonance = 1.0
+db = 3
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_g28q7"]
+resource_name = "LowPassFilter"
+resonance = 1.0
+db = 3
 
 [sub_resource type="AudioEffectChorus" id="AudioEffectChorus_j3pel"]
 resource_name = "Chorus"
+wet = 0.63
+voice/1/delay_ms = 18.27
+voice/1/depth_ms = 2.78
+voice/1/pan = -0.6
+voice/2/delay_ms = 22.8
+voice/2/pan = 0.67
+
+[sub_resource type="AudioEffectDelay" id="AudioEffectDelay_j3pel"]
+resource_name = "Delay"
+feedback_level_db = -4.0
+feedback_lowpass = 13827.0
 
 [resource]
 bus/1/name = &"Mx"
@@ -34,15 +54,19 @@ bus/4/mute = false
 bus/4/bypass_fx = false
 bus/4/volume_db = 0.0
 bus/4/send = &"Master"
-bus/5/name = &"Nave "
+bus/5/name = &"Nave"
 bus/5/solo = false
 bus/5/mute = false
 bus/5/bypass_fx = false
 bus/5/volume_db = 0.0
 bus/5/send = &"Master"
-bus/5/effect/0/effect = SubResource("AudioEffectLowPassFilter_j3pel")
+bus/5/effect/0/effect = SubResource("AudioEffectHighPassFilter_j3pel")
 bus/5/effect/0/enabled = true
-bus/5/effect/1/effect = SubResource("AudioEffectHighPassFilter_j3pel")
+bus/5/effect/1/effect = SubResource("AudioEffectLowPassFilter_j3pel")
 bus/5/effect/1/enabled = true
-bus/5/effect/2/effect = SubResource("AudioEffectChorus_j3pel")
+bus/5/effect/2/effect = SubResource("AudioEffectLowPassFilter_g28q7")
 bus/5/effect/2/enabled = true
+bus/5/effect/3/effect = SubResource("AudioEffectChorus_j3pel")
+bus/5/effect/3/enabled = true
+bus/5/effect/4/effect = SubResource("AudioEffectDelay_j3pel")
+bus/5/effect/4/enabled = true

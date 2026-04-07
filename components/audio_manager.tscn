@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://dd7tdf6looo63"]
+
+[ext_resource type="Script" uid="uid://b0gqauph3qmkm" path="res://components/audio_manager.gd" id="1_ktoxi"]
+[ext_resource type="AudioStream" uid="uid://crfry74vgetyu" path="res://audio/Mx/Mx_GpSpace_IntroFull.wav" id="2_4p23l"]
+[ext_resource type="AudioStream" uid="uid://b4jeh6wrv1kis" path="res://audio/Mx/Mx_LoseSpace_108BPM4-4_L_22M_2Intr.wav" id="3_1y4a4"]
+[ext_resource type="AudioStream" uid="uid://bw3jdltwdhym8" path="res://audio/Mx/Mx_GpSpace_Base_99BPM4-4_L_16M.wav" id="3_s5t0c"]
+[ext_resource type="AudioStream" uid="uid://dy2qamkx7odeq" path="res://audio/Mx/Mx_WinSpace_Full_102BPM4-4_L_8M.wav" id="4_mcl5x"]
+[ext_resource type="AudioStream" uid="uid://cqct66hldepw6" path="res://audio/Mx/Mx_GpSpace_Synth1_99BPM4-4_L_16M.wav" id="4_s6gp0"]
+[ext_resource type="AudioStream" uid="uid://ddodmnkj85c6b" path="res://audio/Mx/Mx_GpSpace_Synth2_99BPM4-4_L_16M.wav" id="5_7akun"]
+[ext_resource type="AudioStream" uid="uid://dwksxvi8cl1up" path="res://audio/Mx/Stinger/Mx_GpSpace-Win_Full_Sting.wav" id="5_orblu"]
+[ext_resource type="AudioStream" uid="uid://d3r6t7nwumj31" path="res://audio/Mx/Mx_GpSpace_Base_fin.wav" id="6_o5a2x"]
+[ext_resource type="AudioStream" uid="uid://cfepoctuyen1v" path="res://audio/Mx/Mx_GpSpace_Synth1_fin.wav" id="7_8ihp7"]
+[ext_resource type="AudioStream" uid="uid://c5riii5ahblbr" path="res://audio/Mx/Mx_GpSpace_Synth2_fin.wav" id="8_3m7qr"]
+[ext_resource type="AudioStream" uid="uid://b2eie6hl8yqgh" path="res://audio/Sfx/Sfx_Radar_Loop.wav" id="8_hjxws"]
+[ext_resource type="AudioStream" uid="uid://drn3eacp6nl12" path="res://audio/Sfx/Sfx_Radar_Fin.wav" id="9_xvpwf"]
+[ext_resource type="AudioStream" uid="uid://b77bowsrta2bw" path="res://audio/Sfx/Sfx_LowFuel_loop.wav" id="10_meetv"]
+[ext_resource type="AudioStream" uid="uid://c5i8vnejdi4ge" path="res://audio/Sfx/Sfx_Hit_Boton.wav" id="11_fmg5b"]
+[ext_resource type="AudioStream" uid="uid://becdmpmxyomlj" path="res://audio/Sfx/Sfx_Hit_CrashLayer.wav" id="12_4p23l"]
+[ext_resource type="AudioStream" uid="uid://jpwsnj6fw2h1" path="res://audio/Sfx/Sfx_Hit_Glitch-001.wav" id="13_s5t0c"]
+[ext_resource type="AudioStream" uid="uid://bauyhmp4mfc67" path="res://audio/Sfx/Sfx_Hit_Glitch-002.wav" id="14_s6gp0"]
+[ext_resource type="AudioStream" uid="uid://31owc6pe4ejl" path="res://audio/Sfx/Sfx_Hit_Glitch-003.wav" id="15_7akun"]
+[ext_resource type="AudioStream" uid="uid://bfbukmvv6qko5" path="res://audio/Sfx/Sfx_Nave_Loop.wav" id="15_s5t0c"]
+[ext_resource type="AudioStream" uid="uid://pjl0f481m5qs" path="res://audio/Sfx/Sfx_Hit_Glitch-004.wav" id="16_o5a2x"]
+
+[node name="AudioManager" type="Node" unique_id=1762802413]
+script = ExtResource("1_ktoxi")
+
+[node name="Mx" type="Node" parent="." unique_id=920156916]
+
+[node name="Mx_GpSpace_Intro" type="AudioStreamPlayer" parent="Mx" unique_id=472076957]
+stream = ExtResource("2_4p23l")
+bus = &"Mx"
+
+[node name="Mx_GpSpace_Base_L" type="AudioStreamPlayer" parent="Mx" unique_id=1624049613]
+stream = ExtResource("3_s5t0c")
+volume_db = -2.0
+bus = &"MxBase"
+
+[node name="Mx_GpSpace_Synth1_L" type="AudioStreamPlayer" parent="Mx" unique_id=1912350406]
+stream = ExtResource("4_s6gp0")
+bus = &"MxSynth "
+
+[node name="Mx_GpSpace_Synth2_L" type="AudioStreamPlayer" parent="Mx" unique_id=977940181]
+stream = ExtResource("5_7akun")
+volume_db = 1.0
+bus = &"MxSynth "
+
+[node name="Mx_GpSpace_Base_Release" type="AudioStreamPlayer" parent="Mx" unique_id=486551530]
+stream = ExtResource("6_o5a2x")
+bus = &"MxBase"
+
+[node name="Mx_GpSpace_Synth1_Release" type="AudioStreamPlayer" parent="Mx" unique_id=1043420729]
+stream = ExtResource("7_8ihp7")
+bus = &"MxSynth "
+
+[node name="Mx_GpSpace_Synth2_Release" type="AudioStreamPlayer" parent="Mx" unique_id=421625706]
+stream = ExtResource("8_3m7qr")
+bus = &"MxSynth "
+
+[node name="WinSpace" type="AudioStreamPlayer" parent="Mx" unique_id=185438213]
+stream = ExtResource("4_mcl5x")
+bus = &"Mx"
+
+[node name="LoseSpace" type="AudioStreamPlayer" parent="Mx" unique_id=163304627]
+stream = ExtResource("3_1y4a4")
+bus = &"Mx"
+
+[node name="Stinger" type="AudioStreamPlayer" parent="Mx" unique_id=993971139]
+stream = ExtResource("5_orblu")
+bus = &"Mx"
+
+[node name="Sfx" type="Node" parent="." unique_id=1852535974]
+
+[node name="SfxRadar" type="AudioStreamPlayer" parent="Sfx" unique_id=1268921311]
+stream = ExtResource("8_hjxws")
+bus = &"Sfx"
+
+[node name="SfxRadarFin" type="AudioStreamPlayer" parent="Sfx" unique_id=2012459367]
+stream = ExtResource("9_xvpwf")
+bus = &"Sfx"
+
+[node name="SfxLowFuel" type="AudioStreamPlayer" parent="Sfx" unique_id=745875234]
+stream = ExtResource("10_meetv")
+bus = &"Sfx"
+
+[node name="SfxNave" type="AudioStreamPlayer" parent="Sfx" unique_id=943043502]
+stream = ExtResource("15_s5t0c")
+
+[node name="Hit" type="Node" parent="Sfx" unique_id=1904555914]
+
+[node name="SfxHitBoton" type="AudioStreamPlayer" parent="Sfx/Hit" unique_id=2026625472]
+stream = ExtResource("11_fmg5b")
+bus = &"Sfx"
+
+[node name="SfxHitCrashLayer" type="AudioStreamPlayer" parent="Sfx/Hit" unique_id=966365063]
+stream = ExtResource("12_4p23l")
+bus = &"Sfx"
+
+[node name="SfxHitGlitch001" type="AudioStreamPlayer" parent="Sfx/Hit" unique_id=1472086511]
+stream = ExtResource("13_s5t0c")
+bus = &"Sfx"
+
+[node name="SfxHitGlitch002" type="AudioStreamPlayer" parent="Sfx/Hit" unique_id=1067861443]
+stream = ExtResource("14_s6gp0")
+bus = &"Sfx"
+
+[node name="SfxHitGlitch003" type="AudioStreamPlayer" parent="Sfx/Hit" unique_id=1929474212]
+stream = ExtResource("15_7akun")
+bus = &"Sfx"
+
+[node name="SfxHitGlitch004" type="AudioStreamPlayer" parent="Sfx/Hit" unique_id=1833764202]
+stream = ExtResource("16_o5a2x")
+bus = &"Sfx"

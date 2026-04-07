@@ -22,7 +22,7 @@ buses/default_bus_layout="uid://bi7wbmi8oj7df"
 [autoload]
 
 WwiseRuntimeManager="*uid://d1tnl3pruka8t"
-AudioManager="*uid://b0gqauph3qmkm"
+AudioManager="*uid://dd7tdf6looo63"
 
 [display]
 
