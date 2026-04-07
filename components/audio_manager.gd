@@ -174,16 +174,16 @@ func update_nave(delta: float) -> void:
 
 func update_nave_filters() -> void:
 	# LP: 10hz en reposo, 1500hz a maxima velocidad
-	lp_filter.cutoff_hz = remap(player_speed, 0.0, 512.0, 10.0, 1500.0)
-	lp_filter.resonance = remap(player_speed, 0.0, 512.0, 0.5, 2.0)
+	lp_filter.cutoff_hz = remap(player_speed, 0.0, 512.0, 10.0, 1000.0)
+	lp_filter.resonance = remap(player_speed, 0.0, 512.0, 1 , 2.0)
 	# HP: 10hz en reposo, 200hz a maxima velocidad
-	hp_filter.cutoff_hz = remap(player_speed, 0.0, 512.0, 10.0, 200.0)
+	hp_filter.cutoff_hz = remap(player_speed, 0.0, 512.0, 10.0, 100.0)
 	#LP2
-	lp_filter_2.cutoff_hz = remap(player_speed, 0.0, 512.0, 10.0, 1500.0)
+	lp_filter_2.cutoff_hz = remap(player_speed, 0.0, 512.0, 10.0, 1000.0)
 	lp_filter_2.resonance = remap(player_speed, 0.0, 512.0, 0.5, 2.0)
-
+	
 func update_nave_tremolo(delta: float) -> void:
-	# Frecuencia del tremolo por tramos
+	# Frec del tremolo
 	var tremolo_freq: float
 	if player_speed <= 450.0:
 		tremolo_freq = remap(player_speed, 0.0, 450.0, 1.5, 3.7)
@@ -197,12 +197,11 @@ func update_nave_tremolo(delta: float) -> void:
 	if tremolo_phase > TAU:
 		tremolo_phase -= TAU
 	
-	# Tremolo en el AudioStreamPlayer
+	# Tremolo 
 	var tremolo_value = (sin(tremolo_phase) * 0.5 + 0.5) * tremolo_depth
 	sfx_nave.volume_db = linear_to_db(1.0 - tremolo_value)
 	
-	# Atenuación por velocidad en el bus
-	AudioServer.set_bus_volume_db(bus_nave_idx, remap(player_speed, 0.0, 512.0, -30.0, 0.0))
+	AudioServer.set_bus_volume_db(bus_nave_idx, remap(player_speed, 0.0, 512.0, -80.0, 0.0))
 	
 #_______________________________________________________
 
