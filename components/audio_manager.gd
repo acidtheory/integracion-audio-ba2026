@@ -1,7 +1,7 @@
 extends Node
 
 # La música!!
-
+#Gp
 @onready var mx_gp_space_intro: AudioStreamPlayer = $Mx/Mx_GpSpace_Intro
 @onready var mx_gp_space_base_l: AudioStreamPlayer = $Mx/Mx_GpSpace_Base_L
 @onready var mx_gp_space_synth_1_l: AudioStreamPlayer = $Mx/Mx_GpSpace_Synth1_L
@@ -11,11 +11,11 @@ extends Node
 @onready var mx_gp_space_synth_2_release: AudioStreamPlayer = $Mx/Mx_GpSpace_Synth2_Release
 
 @onready var music_stinger: AudioStreamPlayer = $Mx/Stinger
-
+#Win-Lose
 @onready var music_win : AudioStreamPlayer = $Mx/WinSpace
 @onready var music_lose : AudioStreamPlayer = $Mx/LoseSpace
 
-# SFX!! 
+# ---------------SFX!!-------------
 #radar
 @onready var sfx_radar: AudioStreamPlayer = $Sfx/SfxRadar
 @onready var sfx_radar_fin: AudioStreamPlayer = $Sfx/SfxRadarFin
