@@ -1,6 +1,6 @@
 extends Node
 
-# La música!!
+# ---------------Mx!!-------------
 #Gp
 @onready var mx_gp_space_intro: AudioStreamPlayer = $Mx/Mx_GpSpace_Intro
 @onready var mx_gp_space_base_l: AudioStreamPlayer = $Mx/Mx_GpSpace_Base_L
