@@ -15,6 +15,19 @@ run/main_scene="uid://eayjhc1p568c"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://dvv8p4jqvl7ef"
 
+[audio]
+
+buses/default_bus_layout="uid://bi7wbmi8oj7df"
+
+[autoload]
+
+WwiseRuntimeManager="*uid://d1tnl3pruka8t"
+AudioManager="*uid://dd7tdf6looo63"
+
+[display]
+
+window/size/mode=3
+
 [global_group]
 
 meteor=""
@@ -28,3 +41,8 @@ meteor=""
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[wwise]
+
+common_user_settings/root_output_path="res://Wwise/Soundbanks"
+project_settings/windows_platform_info="res://Wwise/resources/Windows.tres"

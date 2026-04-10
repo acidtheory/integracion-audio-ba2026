@@ -9,15 +9,18 @@ const METEOR_SMALL = preload("uid://bq23rs5apnv81")
 const OBJECTIVES_AMOUNT = 3
 const OBJECTIVE = preload("uid://7aogf4kwibk8")
 @onready var objectives: Node2D = $Objectives
-
+	
 @onready var max_meteor_distance : float = max(get_viewport().size.x, get_viewport().size.y) * 1.5
 @onready var min_meteor_spawn_distance : float = max(get_viewport().size.x, get_viewport().size.y)
 
-@export var max_meteor_amount : float = 64
+@export var max_meteor_amount : float = 256
+
+@onready var audio_manager = get_node("/root/AudioManager")
 
 var won : bool = false
 
 func _ready() -> void:
+	audio_manager.reset()
 	#region spawn inicial
 	
 	#spawnea objetivos
@@ -79,8 +82,8 @@ func _physics_process(_delta: float) -> void:
 		if distance < distance_to_player:
 			distance_to_player = distance
 			direction_to_player = player.global_position.direction_to(meteor.global_position)
-	player.audio_manager.distance_from_meteor = distance_to_player/10
-	player.audio_manager.direction_to_meteor = direction_to_player
+	audio_manager.distance_from_meteor = distance_to_player/10
+	audio_manager.direction_to_meteor = direction_to_player
 	
 	distance_to_player = INF
 	for objective : Node2D in objectives.get_children():
@@ -88,21 +91,25 @@ func _physics_process(_delta: float) -> void:
 		if distance < distance_to_player:
 			distance_to_player = distance
 			direction_to_player = player.global_position.direction_to(objective.global_position)
-	player.audio_manager.distance_from_objective = distance_to_player/10
-	player.audio_manager.direction_to_objective = direction_to_player
+	audio_manager.distance_from_objective = distance_to_player/10
+	audio_manager.direction_to_objective = direction_to_player
 	
-	$Debug/DebugLabel.text = "Distancia a meteoro mas cercano: " + str(player.audio_manager.distance_from_meteor) + "\n" + "Distancia a objetivo mas cercano: " + str(player.audio_manager.distance_from_objective) + "\n" + "Objetivos restantes: " + str(player.audio_manager.objectives_left)
+	$Debug/DebugLabel.text = "Distancia a meteoro mas cercano: " + str(audio_manager.distance_from_meteor) + "\n" + "Distancia a objetivo mas cercano: " + str(audio_manager.distance_from_objective) + "\n" + "Objetivos restantes: " + str(audio_manager.objectives_left)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_pressed("ui_up"):
-		player.audio_manager.player_is_accelerating = true
+		audio_manager.player_is_accelerating = true
 	else:
-		player.audio_manager.player_is_accelerating = false
+		audio_manager.player_is_accelerating = false
 	if Input.is_action_pressed("ui_down"):
-		player.audio_manager.player_is_braking = true
+		audio_manager.player_is_braking = true
 	else:
-		player.audio_manager.player_is_braking = false
+		audio_manager.player_is_braking = false
 	if objectives.get_children().is_empty() and not won:
 		won = true
-		player.audio_manager.win()
-	player.audio_manager.objectives_left = objectives.get_child_count()
+		player.get_node("Victoria").win()
+		audio_manager.win()
+		player.process_mode = Node.PROCESS_MODE_DISABLED
+		create_tween().tween_property(player.get_node("Ship"),"modulate",Color.TRANSPARENT,0.1)
+		player.get_node("Explode").emitting = true
+	audio_manager.objectives_left = objectives.get_child_count()
