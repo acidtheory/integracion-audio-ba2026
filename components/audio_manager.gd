@@ -224,6 +224,7 @@ func died():
 	mx_gp_space_synth_2_release.stop()
 	sfx_radar.stop()
 	sfx_low_fuel.stop()
+	sfx_nave.stop()
 	music_lose.play()
 	print("Died")
 
